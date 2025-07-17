@@ -5,13 +5,35 @@
     <title>Flask Web App</title>
 </head>
 <body>
-    <h1>Web application</h1>
-    <button id="myButton">Click</button>
-    <p id="newText" style="display:none;">Hello World!</p>
+    <h1>Welcome to My Flask App</h1>
+    
+    <!-- Button to show the hidden text -->
+    <button id="showButton">Show Text</button>
+    
+    <!-- Button to clear/hide the text -->
+    <button id="clearButton">Clear Text</button>
+    
+    <!-- Paragraph that will be shown/hidden by the buttons -->
+    <p id="newText" style="display:none;">New text appeared!</p>
 
     <script>
-        document.getElementById("myButton").addEventListener("click", function() {
-            document.getElementById("newText").style.display = "block";
+        // Get DOM elements
+        const showButton = document.getElementById("showButton");
+        const clearButton = document.getElementById("clearButton");
+        const newText = document.getElementById("newText");
+
+        // Event listener for Show button
+        showButton.addEventListener("click", function() {
+            console.log("Show button clicked"); // Log to browser console
+            newText.style.display = "block";    // Show the text
+            fetch('/log/show');                 // Notify Flask server to log action
+        });
+
+        // Event listener for Clear button
+        clearButton.addEventListener("click", function() {
+            console.log("Clear button clicked"); // Log to browser console
+            newText.style.display = "none";     // Hide the text
+            fetch('/log/clear');                // Notify Flask server to log action
         });
     </script>
 </body>
