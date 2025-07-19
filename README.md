@@ -19,8 +19,6 @@ The project includes automated testing and is integrated with CircleCI.
 
 ### Run Locally
 1. Clone the repository:
-git clone https://github.com/<your-username>/<repo-name>.git
-cd <repo-name>
 
 2. Set up a virtual environment and install dependencies:
 python -m venv venv
@@ -41,6 +39,6 @@ pytest
 
 The project is configured for CircleCI. Each commit runs tests automatically.  
 Build status can be viewed here:  
-[CircleCI Build URL](https://app.circleci.com/pipelines/github/<your-username>/<repo-name>)
+[CircleCI Build URL](https://app.circleci.com/pipelines/circleci/6kTenxPMF9dLWun9Jvu4PH/A1PVbzzH45LPJ2s3KuU3Cr/3)
 
 ---
